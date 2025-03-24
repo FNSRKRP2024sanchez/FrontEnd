@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+    
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre del Encargado</ion-label>
+      <ion-input formControlName="NombreEncargado" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo del Negocio</ion-label>
+      <ion-input formControlName="CorreoNegocio" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción del Negocio</ion-label>
+      <ion-input formControlName="DescripcionNegocio" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número de Teléfono</ion-label>
+      <ion-input formControlName="NumeroTelefono" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ubicación del Negocio</ion-label>
+      <ion-input formControlName="UbicacionNegocio" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">URL de Facebook</ion-label>
+      <ion-input formControlName="UrlFacebook" type="url"></ion-input>
+    </ion-item>
+
+
+    <ion-button expand="full" type="submit" [disabled]="profileForm.invalid" color="primary">
+      Actualizar Información
+    </ion-button>
+  </form>
+</ion-content>

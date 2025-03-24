@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos de {{ categoria }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="productos.length === 0">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando productos...</p>
+  </div>
+
+  <ion-list *ngIf="productos.length > 0">
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>
+        <h2>{{ producto.Nombre }}</h2>
+        <p>{{ producto.Descripcion }}</p>
+        <p><strong>Precio:</strong> ${{ producto.price }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <div *ngIf="productos.length === 0 && categoria">
+    <p>No se encontraron productos para esta categoría.</p>
+  </div>
+</ion-content>

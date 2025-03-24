@@ -1,0 +1,28 @@
+.productos-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 16px;
+    background-color: #f4f5f8;
+  }
+  
+
+  ion-card {
+    width: 280px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  ion-card:hover {
+    transform: scale(1.03);
+  }
+  
+  ion-card img {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  

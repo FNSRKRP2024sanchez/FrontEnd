@@ -1,0 +1,187 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+ 
+  <ion-item>
+    <ion-label>
+      <h2>Nombre</h2>
+      <p>{{ profile.name }}</p> 
+    </ion-label>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label>
+      <h2>Email</h2>
+      <p>{{ profile.email }}</p>
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <h2>Nombre del Encargado</h2>
+      <p>{{ profile.NombreEncargado }}</p> 
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <h2>Correo del Negocio</h2>
+      <p>{{ profile.CorreoNegocio }}</p>
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <h2>Descripción del Negocio</h2>
+      <p>{{ profile.DescripcionNegocio }}</p> 
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <h2>Número de Teléfono</h2>
+      <p>{{ profile.NumeroTelefono }}</p> 
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <h2>Ubicación del Negocio</h2>
+      <p>{{ profile.UbicacionNegocio }}</p>
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>
+      <h2>URL de Facebook</h2>
+      <p>{{ profile.UrlFacebook }}</p> 
+    </ion-label>
+  </ion-item>
+
+
+  <ion-item *ngIf="profile.ImagenPerfil">
+    <ion-label>
+      <h2>Imagen de Perfil</h2>
+    </ion-label>
+    <img [src]="profile.ImagenPerfil" alt="Imagen de Perfil" style="width: 100px; height: 100px;">
+  </ion-item>
+
+
+  <ion-item *ngIf="profile.ImagenNegocio">
+    <ion-label>
+      <h2>Imagen del Negocio</h2>
+    </ion-label>
+    <img [src]="profile.ImagenNegocio" alt="Imagen del Negocio" style="width: 100px; height: 100px;">
+  </ion-item>
+
+
+  <ion-button expand="full" color="danger" (click)="logout()">Cerrar sesión</ion-button>
+
+
+  <ion-button expand="full" color="primary" (click)="actualizarPerfil()">Actualizar Información</ion-button>
+
+
+  <ion-button expand="full" color="secondary" (click)="crearProducto()">Crear Producto</ion-button>
+</ion-content> -->
+
+
+
+
+<!-- perfil.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <div class="header-container">
+      <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="logo">
+      <ion-searchbar placeholder="Buscar productos" class="custom-searchbar"></ion-searchbar>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding profile-content">
+
+  <div class="image-section">
+    <div class="business-bg" *ngIf="profile.ImagenNegocio">
+      <img [src]="profile.ImagenNegocio" alt="Fondo negocio">
+    </div>
+    <div class="profile-img-container" *ngIf="profile.ImagenPerfil">
+      <img [src]="profile.ImagenPerfil" alt="Perfil" class="profile-img">
+    </div>
+  </div>
+
+  <div class="info-section">
+    <ion-item lines="none" class="info-item">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label>
+        <h2>{{ profile.name }}</h2>
+        <p>{{ profile.NombreEncargado }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none" class="info-item">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-label>
+        <h2>Correo</h2>
+        <p>{{ profile.email }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none" class="info-item">
+      <ion-icon name="call" slot="start"></ion-icon>
+      <ion-label>
+        <h2>Teléfono</h2>
+        <p>{{ profile.NumeroTelefono }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none" class="info-item location-item">
+      <ion-icon name="location" slot="start"></ion-icon>
+      <ion-label>
+        <h2>Ubicación</h2>
+        <p>{{ profile.UbicacionNegocio }}</p>
+      </ion-label>
+      <ion-button fill="clear" (click)="buscarUbicacion()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+
+
+  <div class="products-section">
+    <div class="section-header">
+      <h2>Productos</h2>
+      <ion-button fill="clear" (click)="crearProducto()">
+        <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="product-list">
+      <ion-item *ngFor="let producto of productos" class="product-item">
+        <ion-thumbnail slot="start">
+          <img [src]="producto.imagen">
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{ producto.nombre }}</h3>
+          <p>Stock: {{ producto.stock }}</p>
+          <p>Vence: {{ producto.fechaVencimiento }}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+
+
+  <div class="action-buttons">
+    <ion-button expand="block" color="primary" (click)="actualizarPerfil()">Editar Perfil</ion-button>
+    <ion-button expand="block" color="danger" (click)="logout()">Cerrar Sesión</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+@for (producto of productos; track $index) {
+  <ion-card class="my_card" >
+
+    <img  class="my_image_card" [src]="producto.imagenes">
+    
+    <ion-card-content class="ion-no-padding">
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+
+          <ion-col size="12" class="ion-align-self-center ion-text-center">
+            <h2 class="producto-name">{{ producto.Nombre }}</h2>
+          </ion-col>
+
+          <ion-col size="6" class="ion-align-self-center ion-text-center">
+            <h3 class="producto-precio">prueva{{ producto.Precio }}</h3>
+          </ion-col>
+
+          <ion-col size="6" class="ion-align-self-center ion-text-center">
+            <h3 class="producto-stock">Stock: {{ producto.stock }}</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+
+      <p class="producto-description">{{ producto.description }}</p>
+      
+
+      <ion-button expand="block" color="primary" (click)="verDetalles(producto._id)">
+        Ver detalles
+      </ion-button>
+      
+    </ion-card-content>
+  </ion-card>
+  
+}
+
+
+
