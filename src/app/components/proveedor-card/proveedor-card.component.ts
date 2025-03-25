@@ -7,19 +7,24 @@ import { Router } from '@angular/router';
   selector: 'app-proveedor-card',
   templateUrl: './proveedor-card.component.html',
   styleUrls: ['./proveedor-card.component.scss'],
-  imports: [IonCol, IonButton, IonRow, 
+  imports: [ 
+    IonButton, 
+    // IonRow, IonGrid, IonCol,
     // IonIcon, IonList,
-    IonGrid, IonCard, IonCardContent, ],
+    IonCard, IonCardContent, ],
 })
+
+
+
 export class ProveedorCardComponent implements OnInit {
   proveedores: any[] = [];  
   private ApiService = inject(ApiService);
   private router = inject(Router);
 
-  constructor() { }
+  constructor() {}
+
 
   ngOnInit(): void {
-    
     this.ApiService.getProvedores().subscribe(
       (data) => {
         console.log('Datos de proveedores recibidos:', data);
@@ -30,6 +35,7 @@ export class ProveedorCardComponent implements OnInit {
       }
     );
   }
+
 
   goTOProduct(proveedorId: string) {
     this.router.navigate(['/productos-proveedor', proveedorId]);

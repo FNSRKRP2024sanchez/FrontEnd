@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+// import { AuthGuard } from './core/auth.guard';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,7 @@ export const routes: Routes = [
     path: 'productos-proveedor',
     loadComponent: () => import('./pages/productos-proveedor/productos-proveedor.page').then( m => m.ProductosProveedorPage),
     
+
   },
   {
     path: 'productos-proveedor/:proveedorId',

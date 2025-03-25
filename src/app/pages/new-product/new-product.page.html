@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Nuevo Producto</ion-title>
   </ion-toolbar>
@@ -32,11 +32,11 @@
         <ion-select-option value="electronica">Electrónica</ion-select-option>
         <ion-select-option value="ropa">Ropa</ion-select-option>
         <ion-select-option value="hogar">Hogar</ion-select-option>
-        <!-- Agrega más categorías si es necesario -->
+
       </ion-select>
     </ion-item>
 
-    <!-- Campo para cargar imágenes -->
+
     <ion-item>
       <ion-label>Imágenes</ion-label>
       <input type="file" (change)="onFileChange($event)" multiple />
@@ -45,4 +45,88 @@
     <ion-button expand="full" type="submit">Crear Producto</ion-button>
     <ion-button expand="full" color="danger" (click)="cancelar()">Cancelar</ion-button>
   </form>
+</ion-content> -->
+
+
+
+
+
+
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Nuevo Producto</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar>
+    <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="logo">
+    <!-- <ion-title>Nuevo Producto</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header-image">
+    <img src="assets/images/buscador imagen sin opacidad.png" alt="Header" class="header-bg">
+    <h1 class="header-text">Nuevo Producto</h1>
+  </div>
+
+  <form (ngSubmit)="anadirProducto()">
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input [(ngModel)]="producto.Nombre" name="nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Descripción</ion-label>
+      <ion-textarea [(ngModel)]="producto.Descripcion" name="descripcion" required></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Precio</ion-label>
+      <ion-input [(ngModel)]="producto.Precio" name="precio" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Stock</ion-label>
+      <ion-input [(ngModel)]="producto.Stock" name="stock" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-select [(ngModel)]="producto.categoria" name="categoria" required>
+        <ion-select-option value="Frutas y Verduras">Frutas y Verduras</ion-select-option>
+        <ion-select-option value="Lacteos">Lacteos</ion-select-option>
+        <ion-select-option value="Granos y Cereales">Granos y Cereales</ion-select-option>
+        <ion-select-option value="Legumbre-Frutos Secos">Legumbre-Frutos Secos</ion-select-option>
+        <!-- Agrega más categorías si es necesario -->
+      </ion-select> 
+    </ion-item>
+
+    <!-- Campo para cargar imágenes -->
+    <ion-item>
+      <ion-label>Imágenes</ion-label>
+      <input type="file" (change)="onFileChange($event)" multiple />
+    </ion-item>
+
+    <div class="button-container">
+      <ion-button expand="block" type="submit" color="primary">
+        Crear Producto
+      </ion-button>
+      
+      <ion-button expand="block" color="danger" (click)="cancelar()">
+        Cancelar
+      </ion-button>
+    </div>
+    <!-- <ion-button expand="full" type="submit">Crear Producto</ion-button>
+    <ion-button expand="full" color="danger" (click)="cancelar()">Cancelar</ion-button> -->
+  </form>
 </ion-content>
+
+
+
+
+
+
+

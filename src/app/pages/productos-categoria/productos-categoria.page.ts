@@ -24,7 +24,7 @@ export class ProductosCategoriaPage implements OnInit {
   productos: any[] = [];  
 
   ngOnInit() {
-   
+  
     this.categoria = this.route.snapshot.paramMap.get('categoria') || '';
 
     
@@ -41,3 +41,4 @@ export class ProductosCategoriaPage implements OnInit {
     }
   }
 }
+

@@ -1,37 +1,115 @@
-.my_card {
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
+// .my_card {
+//     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+//     border-radius: 10px;
+//     overflow: hidden;
+//     margin-bottom: 20px;
+//   }
   
-  .my_image_card {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #f0f0f0;
-  }
+//   .my_image_card {
+//     width: 100%;
+//     height: 200px;
+//     object-fit: cover;
+//     border-bottom: 2px solid #f0f0f0;
+//   }
   
-  .producto-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-  }
+//   .producto-name {
+//     font-size: 20px;
+//     font-weight: bold;
+//     color: #333;
+//   }
   
-  .producto-precio,
-  .producto-stock {
-    font-size: 16px;
-    font-weight: 600;
-    color: #555;
-  }
+//   .producto-precio,
+//   .producto-stock {
+//     font-size: 16px;
+//     font-weight: 600;
+//     color: #555;
+//   }
   
-  .producto-description {
-    color: #777;
-    font-size: 14px;
-    margin-top: 10px;
-  }
+//   .producto-description {
+//     color: #777;
+//     font-size: 14px;
+//     margin-top: 10px;
+//   }
   
-  ion-button {
-    margin-top: 15px;
-  }
+//   ion-button {
+//     margin-top: 15px;
+//   }
   
+
+
+// .my_card {
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+  
+//   .my_image_card {
+//     width: 100%;
+//     height: 180px;
+//     object-fit: cover;
+//   }
+
+//   .producto-name {
+//     font-size: 1.1em;
+//     font-weight: bold;
+//     margin: 8px 0;
+//   }
+
+//   .producto-precio {
+//     color: var(--ion-color-primary);
+//     font-weight: bold;
+//     font-size: 1.2em;
+//   }
+
+//   .producto-stock {
+//     color: #666;
+//     font-size: 0.9em;
+//   }
+
+//   .producto-description {
+//     font-size: 0.9em;
+//     color: #444;
+//     margin: 10px 0;
+//     line-height: 1.4;
+//     height: 60px;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//   }
+
+//   ion-button {
+//     margin-top: auto;
+//   }
+// }
+.producto-card {
+  width: 95%;
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nombre {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.descripcion {
+  font-size: 12px;
+  color: #555;
+}
+
+.precio, .stock {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+ion-thumbnail img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+ion-button {
+  margin-top: 5px;
+  font-size: 12px;
+}

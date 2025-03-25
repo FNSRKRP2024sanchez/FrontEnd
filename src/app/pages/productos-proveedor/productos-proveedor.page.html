@@ -1,22 +1,110 @@
+
 <!-- <ion-header>
   <ion-toolbar>
-    <ion-title>Productos del Proveedor</ion-title>
+    <ion-title>
+      <div class="search-container">
+        <ion-searchbar placeholder="Buscar..."></ion-searchbar>
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
-  <app-product-card [proveedorId]="proveedorId"></app-product-card>
-</ion-content> -->
+  <div class="header-container">
+    <img src="https://sp.yimg.com/ib/th?&id=ODL.85fdb03f31d824ef3502df157e687487&w=200&h=107&c=4&dpr=2&rs=1" alt="Tienda Orgánica" class="header-image">
+    <img src="https://tse2.mm.bing.net/th?id=OIP.BgOcpP3U-Cj4qcXwQA3E0wHaHa&pid=Api&P=0&h=180" alt="Jugador de Basquetbol" class="player-image">
+  </div>
 
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">Productos del Proveedor</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding">
-  <div class="productos-wrapper">
-    <app-product-card [proveedorId]="proveedorId"></app-product-card>
+  <div class="info-card">
+    <h3>Escobar Pablo Ramírez</h3>
+    <p class="email">Correonegocio.com</p>
+    <p class="description">
+      Negocio familiar, se venden productos orgánicos frescos a buen precio:
+      verduras, lácteos, frutas de diferente variedad.
+    </p>
+  </div>
+  <div class="social-icons">
+    <ion-icon color="light" name="people"></ion-icon>
+    <ion-icon color="light" name="star"></ion-icon>
+    <ion-icon color="light" name="heart"></ion-icon>
   </div>
 </ion-content>
+
+
+<ion-content class="ion-padding">
+  <h2>Productos</h2>
+
+
+  <h1></h1>
+
+  <div class="productos-wrapper">
+    <div class="productos-scroll">
+      <app-product-card [proveedorId]="proveedorId"></app-product-card>
+    </div>
+  </div>
+</ion-content> -->
+
+
+
+
+
+
+
+<!-- <ion-content>
+
+  <h2>Productos</h2>
+  
+
+  <div class="productos-wrapper">
+    <div class="productos-scroll">
+      <app-product-card [proveedorId]="proveedorId"></app-product-card>
+    </div>
+  </div>
+</ion-content> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- productos-proveedor.page.html -->
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <div class="header-container">
+        <img src="assets/images/Logo de BIOCONNET.svg" alt="Logo" class="header-logo">
+        <ion-searchbar 
+          class="custom-searchbar" 
+          placeholder="Buscar"
+          (ionInput)="buscar($event)"
+          (keyup.enter)="buscar($event)">
+        </ion-searchbar>
+      </div>
+    </ion-toolbar>
+
+    <div class="titulo-seccion">
+      <h2>PRODUCTOS A LA VENTA</h2>
+    </div>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="productos-wrapper">
+      <div class="productos-scroll">
+        <app-product-card 
+          [proveedorId]="proveedorId"
+          class="custom-product-card">
+        </app-product-card>
+      </div>
+    </div>
+  </ion-content>
+</ion-content>
+
+
+

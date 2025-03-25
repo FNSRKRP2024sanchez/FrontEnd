@@ -54,6 +54,123 @@ ion-content {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.help-btn {
+  width: 80px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-icon {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
+
+
+
+.custom-btn {
+  --background: #ffffff !important;
+  --color: #000000 !important;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  
+  // Efecto hover
+  &:hover:not(.disabled) {
+    --background: #f8f9fa !important;
+    --box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  // Efecto active
+  &:active:not(.disabled) {
+    --background: #e9ecef !important;
+    transform: scale(0.98);
+  }
+
+  // Transición suave
+  transition: all 0.2s ease-in-out;
+
+  // Estilo del texto
+  ion-label {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-left: 8px;
+  }
+
+  // Estilo del icono
+  ion-icon {
+    font-size: 2.1em;
+    color: #030303; // Color del icono en rojo para contraste
+  }
+
+  // Borde sutil
+  --border-width: 1px;
+  --border-color: rgba(0, 0, 0, 0.1);
+
+
+
+
+
+
+
+  .custom-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .plus-icon {
+    width: 35px;  /* Ajusta según el tamaño de la imagen */
+    height: 35px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Sección de proveedores */
 .providers-header {
   display: flex;
@@ -96,6 +213,7 @@ ion-content {
       filter: drop-shadow(0 2px 2px rgba(168, 0, 0, 0.2)); /* Sombra para destacar */
     }
   }
+
 }
 
 /* Listado de proveedores */

@@ -1,0 +1,50 @@
+/* Estilo global para la página de actualizar perfil */
+ion-content {
+    background-color: white;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  ion-item {
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-label {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  ion-input {
+    font-size: 1rem;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-button {
+    font-weight: 600;
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  ion-button:hover {
+    background-color: #219150;
+  }
+  
+  ion-button:focus {
+    outline: none;
+  }
+  

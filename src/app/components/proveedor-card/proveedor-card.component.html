@@ -1,12 +1,11 @@
+<!-- 
 @for (proveedor of proveedores; track $index) { 
-  
     <ion-card class="my_card">
-   
-      
+
       <ion-card-content class="ion-no-padding">
         <ion-grid class="ion-no-padding">
           <ion-row>
-     
+    
             <ion-col size="12" class="ion-align-self-center ion-text-center">
               <h2 class="producto-name">{{ proveedor.name }}</h2>
             </ion-col>
@@ -14,7 +13,6 @@
         </ion-grid>
 
         <p class="producto-description">{{ proveedor.DescripcionNegocio }}</p>
-        
 
         <ion-button expand="block" color="primary" (click)="goTOProduct(proveedor._id)">
           Ver Productos del proveedor
@@ -22,4 +20,33 @@
       </ion-card-content>
     </ion-card>
   }
+  -->
 
+
+
+
+@for (proveedor of proveedores; track $index) { 
+  <ion-card class="provider-card">
+    <ion-card-content class="card-content">
+      <div class="card-header">
+        <h2 class="provider-name">{{ proveedor.name }}</h2>
+        <div class="price-stock">
+          <span class="price">Precio: ${{ proveedor.precio }}</span>
+          <span class="stock">Stock: {{ proveedor.stock }}</span>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <img [src]="proveedor.imagen" alt="Producto" class="product-image">
+        
+        <div class="product-info">
+          <p class="product-description">{{ proveedor.DescripcionNegocio }}</p>
+          <ion-button expand="block" class="view-product-btn" 
+                      (click)="goTOProduct(proveedor._id)">
+            Ver producto
+          </ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+}

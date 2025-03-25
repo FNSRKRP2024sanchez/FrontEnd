@@ -7,10 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
+  
+
   private ApiUrl = 'http://localhost:3001'; 
 
   constructor(private http: HttpClient) { }
 
+  
   // Obtener todos los productos
   getProductos(): Observable<any> {
     return this.http.get<any>(`${this.ApiUrl}/api/productos`);
@@ -28,10 +31,16 @@ export class ApiService {
   // Obtener productos por proveedor
 
   // Crear un nuevo producto
+  // postProducto(data: FormData): Observable<any> {
+  //   return this.http.post(`${this.ApiUrl}/api/productos`, data);
+  // }
+
+
+  
   postProducto(data: FormData): Observable<any> {
     return this.http.post(`${this.ApiUrl}/api/productos`, data);
   }
-  
+
 
   // Registrar un nuevo usuario
   registerUser(data: any): Observable<any> {
@@ -71,7 +80,7 @@ getProvedores(): Observable<any> {
   }
 
   getProductosFavoritos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.ApiUrl}/api/productos/favoritos/favorito:true`);
+    return this.http.get<any[]>(`${this.ApiUrl}/api/productos/favoritos/favorito=true`);
   }
 
 }

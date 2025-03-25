@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonLabel, IonInput, IonTextarea, IonIcon, IonFooter, IonButtons } from '@ionic/angular/standalone';
 import { ProveedorService } from 'src/app/services/proveedor.service';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-register',
@@ -22,12 +23,13 @@ import { Router } from '@angular/router';
     IonButton,
     IonLabel,
     IonInput,
-    
+
   ]
 })
 
 export class RegisterPage implements OnInit {
   private proveedorService = inject(ProveedorService);
+  // private userService = inject(ApiService);
   private router = inject(Router);
   private fb = inject(FormBuilder);
 
@@ -37,9 +39,9 @@ export class RegisterPage implements OnInit {
     Password: ['', [Validators.required, Validators.minLength(6)]],
     NumeroTelefono: ['', Validators.required],
     // UbicacionNegocio: [''],
-    DescripcionNegocio: ['', Validators.required], 
-    ImagenPerfil: ['', Validators.required],
-    ImagenNegocio: ['', Validators.required],
+    // DescripcionNegocio: [''], 
+    ImagenPerfil: [''],
+    ImagenNegocio: [''],
   });
 
   constructor() { }
@@ -51,28 +53,33 @@ export class RegisterPage implements OnInit {
     }
     try {
       const response = await this.proveedorService.crearProveedor(this.registroForm.value).toPromise();
+
+      // const response = await this.userService.registerUser(this.registroForm.value).toPromise();
       console.log('Proveedor registrado exitosamente', response);
       this.router.navigate(['/login']);
     } catch (error) {
+
+
+
       console.error('Error en el registro:', error);
     }
   }
   ngOnInit() { }
 
-//   onFileSelected(event: any) {
-//     const file = event.target.files[0];
-//     if (file) {
-//       this.registroForm.patchValue({ ImagenPerfil: file });
-//     }
-//   }
+  //   onFileSelected(event: any) {
+  //     const file = event.target.files[0];
+  //     if (file) {
+  //       this.registroForm.patchValue({ ImagenPerfil: file });
+  //     }
+  //   }
 
 
-// Modificar el método onFileSelected para soportar ambos campos
-onFileSelected(event: any, field: string) {
-  const file = event.target.files[0];
-  if (file) {
-    this.registroForm.patchValue({ [field]: file });
+  // Modificar el método onFileSelected para soportar ambos campos
+  onFileSelected(event: any, field: string) {
+    const file = event.target.files[0];
+    if (file) {
+      this.registroForm.patchValue({ [field]: file });
+    }
   }
-}
 
 }

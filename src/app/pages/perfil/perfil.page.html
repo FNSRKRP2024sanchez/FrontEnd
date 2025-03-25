@@ -99,6 +99,8 @@
 
 
 <!-- perfil.page.html -->
+
+<!-- 
 <ion-header>
   <ion-toolbar>
     <div class="header-container">
@@ -184,4 +186,79 @@
     <ion-button expand="block" color="primary" (click)="actualizarPerfil()">Editar Perfil</ion-button>
     <ion-button expand="block" color="danger" (click)="logout()">Cerrar Sesión</ion-button>
   </div>
+</ion-content>
+
+
+ -->
+
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="search-container">
+        <ion-searchbar placeholder="Buscar..."></ion-searchbar>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="header-container">
+    <img src="https://sp.yimg.com/ib/th?&id=ODL.85fdb03f31d824ef3502df157e687487&w=200&h=107&c=4&dpr=2&rs=1" 
+          alt="Tienda Orgánica" 
+          class="header-image">
+    <img src="https://tse2.mm.bing.net/th?id=OIP.BgOcpP3U-Cj4qcXwQA3E0wHaHa&pid=Api&P=0&h=180" 
+          alt="Jugador de Basquetbol" 
+          class="player-image">
+  </div>
+
+  <div class="info-card">
+    <ion-button color="danger" (click)="actualizarPerfil()" class="logout-btn">
+      <ion-icon name="heart"></ion-icon>
+    </ion-button>
+  
+    <h3>{{profile.name}}</h3>
+    <p class="email">{{profile.email}}</p>
+    <p class="description">{{profile.DescripcionNegocio}}</p>
+  </div>
+  
+
+  
+
+<div class="social-icons">
+  <ion-icon 
+    color="light" 
+    name="people"
+    
+  ></ion-icon>
+  
+  <ion-icon 
+    color="light" 
+    name="star"
+  ></ion-icon>
+  
+  <ion-icon 
+    color="light" 
+    name="heart"
+
+  ></ion-icon>
+</div>
+
+
+<h2>Productos</h2>
+ 
+  <ion-button color="secondary" (click)="crearProducto()">
+    <ion-icon name="heart"></ion-icon>
+  </ion-button>
+
+
+
+
+  <ion-button expand="full" color="primary" (click)="logout()">Actualizar Información</ion-button>
+
+
+  
 </ion-content>
