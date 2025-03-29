@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonLabel, IonInput, IonText, IonCheckbox } from '@ionic/angular/standalone';
 import { ProveedorService } from 'src/app/services/proveedor.service';
 import { Router } from '@angular/router';
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ import { Router } from '@angular/router';
     IonInput,
 
     IonCheckbox,
+    FooterNavComponent
 
   ]
 })

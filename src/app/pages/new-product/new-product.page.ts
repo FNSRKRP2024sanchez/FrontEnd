@@ -110,13 +110,18 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonInput, IonButton, IonTextarea, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
 import { ApiService } from '../../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
 
 @Component({
   selector: 'app-new-product',
   templateUrl: './new-product.page.html',
   styleUrls: ['./new-product.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonItem, IonLabel, IonInput, IonButton, IonTextarea, IonSelect, IonSelectOption]
+  imports: [IonContent, IonHeader, 
+    // IonTitle, 
+    IonToolbar, CommonModule, FormsModule, IonItem, IonLabel, IonInput, IonButton, IonTextarea, IonSelect, IonSelectOption,
+    FooterNavComponent
+  ]
 })
 export class NewProductPage implements OnInit {
 

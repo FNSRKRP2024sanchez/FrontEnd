@@ -7,12 +7,17 @@ import { ProveedorService } from 'src/app/services/proveedor.service';  // Impor
 import { ProductCardComponent } from 'src/app/components/product-card/product-card.component';
 import { addIcons } from 'ionicons';
 import { heart, home, star, options, person, people, addCircle, help } from 'ionicons/icons';
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
   styleUrls: ['./perfil.page.scss'],
   standalone: true,
-  imports: [IonButtons, IonSearchbar, IonIcon, IonContent, IonHeader, 
+  imports: [
+    // IonButtons, 
+    IonSearchbar, IonIcon, IonContent, IonHeader, 
+    FooterNavComponent,
     // IonTitle, 
     IonToolbar, CommonModule, FormsModule, IonTitle, IonButton]
 })

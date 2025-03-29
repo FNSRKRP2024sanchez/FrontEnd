@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonLabel, IonInput } from '@ionic/angular/standalone';
 import { ProveedorService } from 'src/app/services/proveedor.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
 
 @Component({
   selector: 'app-actualizar-perfil',
@@ -20,7 +21,8 @@ import { ActivatedRoute, Router } from '@angular/router';
     IonItem,
     IonButton,
     IonLabel,
-    IonInput
+    IonInput,
+    FooterNavComponent,
   ]
 })
 export class ActualizarPerfilPage implements OnInit {

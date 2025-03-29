@@ -8,168 +8,398 @@
 // }
 
 
-/* home.page.scss */
-/* Estilos generales del contenido */
-ion-content {
-  --background: #ffffff; /* Fondo blanco para toda la página */
+// /* home.page.scss */
+// /* Estilos generales del contenido */
+// ion-content {
+//   --background: #ffffff; /* Fondo blanco para toda la página */
+// }
+
+// /* Encabezado con logo y barra de búsqueda */
+// .header-container {
+//   display: flex;
+//   align-items: center;
+//   padding: 8px 16px;
+//   background: #ffffff; /* Fondo blanco para el header */
+  
+//   .header-logo {
+//     width: 45px;
+//     height: 45px;
+//     margin-right: 12px;
+//     filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1)); /* Sombra suave para destacar el logo */
+//   }
+  
+//   .custom-searchbar {
+//     flex: 1;
+//     --background: #f5f5f5; /* Gris claro para contraste */
+//     --border-radius: 20px;
+//     --box-shadow: none;
+//     --color: #333333; /* Color de texto oscuro */
+//     --placeholder-color: #666666; /* Color para placeholder */
+//     padding: 0;
+//   }
+// }
+
+// /* Contenedor de la imagen principal */
+// .main-image-container {
+//   height: 200px;
+//   overflow: hidden;
+//   position: relative;
+//   margin: 16px 0;
+  
+//   .main-image {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     border-radius: 8px; /* Bordes redondeados */
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .help-btn {
+//   width: 80px;
+//   height: 40px;
+//   padding: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .help-icon {
+//   width: 30px;
+//   height: 30px;
+// }
+
+
+
+
+
+
+
+// .custom-btn {
+//   --background: #ffffff !important;
+//   --color: #000000 !important;
+//   --border-radius: 12px;
+//   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   --padding-top: 14px;
+//   --padding-bottom: 14px;
+//   --padding-start: 24px;
+//   --padding-end: 24px;
+  
+//   // Efecto hover
+//   &:hover:not(.disabled) {
+//     --background: #f8f9fa !important;
+//     --box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+//   }
+  
+//   // Efecto active
+//   &:active:not(.disabled) {
+//     --background: #e9ecef !important;
+//     transform: scale(0.98);
+//   }
+
+//   // Transición suave
+//   transition: all 0.2s ease-in-out;
+
+//   // Estilo del texto
+//   ion-label {
+//     font-weight: 600;
+//     letter-spacing: 0.5px;
+//     text-transform: uppercase;
+//     font-size: 0.9em;
+//     margin-left: 8px;
+//   }
+
+//   // Estilo del icono
+//   ion-icon {
+//     font-size: 2.1em;
+//     color: #030303; // Color del icono en rojo para contraste
+//   }
+
+//   // Borde sutil
+//   --border-width: 1px;
+//   --border-color: rgba(0, 0, 0, 0.1);
+
+
+
+
+
+
+
+//   .custom-btn {
+//     width: 50px;
+//     height: 50px;
+//     padding: 0;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+  
+//   .plus-icon {
+//     width: 35px;  /* Ajusta según el tamaño de la imagen */
+//     height: 35px;
+//   }
+  
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /* Sección de proveedores */
+// .providers-header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 0 16px 16px;
+//   background: #ffffff;
+  
+//   .title-section {
+//     display: flex;
+//     align-items: center;
+    
+//     .section-title {
+//       margin: 0;
+//       font-size: 1.4rem;
+//       color: #2c3e50; /* Azul oscuro para mejor contraste */
+//       font-weight: 600;
+//       text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra de texto suave */
+//     }
+    
+//     .heart-btn {
+//       --padding-start: 0;
+//       --padding-end: 0;
+//       margin-right: 8px;
+//       --color: #e2220d; /* Rojo para el ícono del corazón */
+      
+//       ion-icon {
+//         font-size: 1.8rem;
+//       }
+//     }
+//   }
+  
+//   .add-btn {
+//     --padding-start: 0;
+//     --padding-end: 0;
+//     --color: #000000; /* Color oscuro para el botón + */
+    
+//     ion-icon {
+//       font-size: 2rem;
+//       filter: drop-shadow(0 2px 2px rgba(168, 0, 0, 0.2)); /* Sombra para destacar */
+//     }
+//   }
+
+// }
+
+// /* Listado de proveedores */
+// .providers-list {
+//   background: #ffffff;
+//   padding: 16px;
+//   border-radius: 12px;
+//   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+//   margin: 16px;
+
+//   app-proveedor-card {
+//     background: #ffffff;
+//     margin-bottom: 20px;
+//     padding: 16px;
+//     border: 1px solid #e0e0e0;
+//     border-radius: 8px;
+//     transition: transform 0.2s; /* Animación suave al hover */
+
+//     &:hover {
+//       transform: translateY(-2px); /* Efecto de elevación */
+//     }
+
+//     ion-card {
+//       background: transparent;
+//       box-shadow: none;
+      
+//       ion-card-header {
+//         padding: 16px;
+        
+//         ion-card-title {
+//           color: #2c3e50 !important; /* Color principal */
+//           font-size: 1.2rem;
+//           font-weight: 700;
+//         }
+        
+//         ion-card-subtitle {
+//           color: #4a5568 !important; /* Color secundario */
+//           font-size: 0.9rem;
+//         }
+//       }
+      
+//       ion-card-content {
+//         color: #4a5568;
+//         line-height: 1.5;
+//         padding: 0;
+//       }
+//     }
+
+//     /* Botón "Ver productos" */
+//     .ver-productos-btn {
+//       --color: #2c3e50;
+//       --border-color: #2c3e50;
+//       --border-width: 2px;
+//       margin-top: 12px;
+//       font-weight: 600;
+//       letter-spacing: 0.5px;
+      
+//       &:hover {
+//         --background: #2c3e50;
+//         --color: #ffffff;
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estructura principal */
+.main-container {
+  --background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  
 }
 
-/* Encabezado con logo y barra de búsqueda */
+/* Header estático */
+.static-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+
+
 .header-container {
   display: flex;
   align-items: center;
   padding: 8px 16px;
-  background: #ffffff; /* Fondo blanco para el header */
   
   .header-logo {
     width: 45px;
     height: 45px;
     margin-right: 12px;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1)); /* Sombra suave para destacar el logo */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+  }
+
+  .custom-searchbar {
+    flex: 1;
+    --background: #f5f5f5;
+    --border-radius: 20px;
+    --box-shadow: none;
+    --color: #333333;
+  }
+}
+
+.icon-alert {
+  .alert-message {
+    overflow-y: auto;
+    max-height: 60vh;
+    
+    ion-icon {
+      font-size: 1.2rem;
+      vertical-align: middle;
+      margin-right: 8px;
+      color: var(--ion-color-primary);
+    }
+  }
+}
+
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 0;
+  
+  .header-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
   }
   
   .custom-searchbar {
     flex: 1;
-    --background: #f5f5f5; /* Gris claro para contraste */
-    --border-radius: 20px;
-    --box-shadow: none;
-    --color: #333333; /* Color de texto oscuro */
-    --placeholder-color: #666666; /* Color para placeholder */
+    --background: rgba(255, 255, 255, 0.9);
+    --border-radius: 25px;
+    --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --color: #333333;
+    --placeholder-color: #666;
+    --placeholder-opacity: 0.8;
     padding: 0;
+    
+    .searchbar-input-container {
+      input {
+        padding-left: 20px !important;
+      }
+    }
   }
 }
 
-/* Contenedor de la imagen principal */
+
+
+
+
 .main-image-container {
   height: 200px;
   overflow: hidden;
-  position: relative;
-  margin: 16px 0;
+  margin: 16px;
+  border-radius: 8px;
   
   .main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px; /* Bordes redondeados */
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.help-btn {
-  width: 80px;
-  height: 40px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.help-icon {
-  width: 30px;
-  height: 30px;
-}
-
-
-
-
-
-
-
-.custom-btn {
-  --background: #ffffff !important;
-  --color: #000000 !important;
-  --border-radius: 12px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --padding-top: 14px;
-  --padding-bottom: 14px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  
-  // Efecto hover
-  &:hover:not(.disabled) {
-    --background: #f8f9fa !important;
-    --box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  // Efecto active
-  &:active:not(.disabled) {
-    --background: #e9ecef !important;
-    transform: scale(0.98);
-  }
-
-  // Transición suave
-  transition: all 0.2s ease-in-out;
-
-  // Estilo del texto
-  ion-label {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    margin-left: 8px;
-  }
-
-  // Estilo del icono
-  ion-icon {
-    font-size: 2.1em;
-    color: #030303; // Color del icono en rojo para contraste
-  }
-
-  // Borde sutil
-  --border-width: 1px;
-  --border-color: rgba(0, 0, 0, 0.1);
-
-
-
-
-
-
-
-  .custom-btn {
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .plus-icon {
-    width: 35px;  /* Ajusta según el tamaño de la imagen */
-    height: 35px;
-  }
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Sección de proveedores */
 .providers-header {
@@ -177,7 +407,6 @@ ion-content {
   justify-content: space-between;
   align-items: center;
   padding: 0 16px 16px;
-  background: #ffffff;
   
   .title-section {
     display: flex;
@@ -186,95 +415,75 @@ ion-content {
     .section-title {
       margin: 0;
       font-size: 1.4rem;
-      color: #2c3e50; /* Azul oscuro para mejor contraste */
+      color: #2c3e50;
       font-weight: 600;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra de texto suave */
-    }
-    
-    .heart-btn {
-      --padding-start: 0;
-      --padding-end: 0;
-      margin-right: 8px;
-      --color: #e2220d; /* Rojo para el ícono del corazón */
-      
-      ion-icon {
-        font-size: 1.8rem;
-      }
     }
   }
-  
-  .add-btn {
-    --padding-start: 0;
-    --padding-end: 0;
-    --color: #000000; /* Color oscuro para el botón + */
-    
-    ion-icon {
-      font-size: 2rem;
-      filter: drop-shadow(0 2px 2px rgba(168, 0, 0, 0.2)); /* Sombra para destacar */
-    }
-  }
-
 }
 
-/* Listado de proveedores */
+/* Botones de ayuda y agregar */
+.help-btn, .custom-btn {
+  --padding-start: 0;
+  --padding-end: 0;
+  ion-icon {
+    font-size: 28px;
+  }
+}
+
+.help-btn ion-icon {
+  color: #000000; /* Azul para el ícono de ayuda */
+}
+
+.custom-btn ion-icon {
+  color: #000000; /* Verde para el ícono de agregar */
+}
+
+/* Contenido desplazable */
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 80px; /* Espacio para el footer */
+}
+
+/* Lista de proveedores */
 .providers-list {
   background: #ffffff;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin: 16px;
-
-  app-proveedor-card {
-    background: #ffffff;
-    margin-bottom: 20px;
-    padding: 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    transition: transform 0.2s; /* Animación suave al hover */
-
-    &:hover {
-      transform: translateY(-2px); /* Efecto de elevación */
-    }
-
-    ion-card {
-      background: transparent;
-      box-shadow: none;
-      
-      ion-card-header {
-        padding: 16px;
-        
-        ion-card-title {
-          color: #2c3e50 !important; /* Color principal */
-          font-size: 1.2rem;
-          font-weight: 700;
-        }
-        
-        ion-card-subtitle {
-          color: #4a5568 !important; /* Color secundario */
-          font-size: 0.9rem;
-        }
-      }
-      
-      ion-card-content {
-        color: #4a5568;
-        line-height: 1.5;
-        padding: 0;
-      }
-    }
-
-    /* Botón "Ver productos" */
-    .ver-productos-btn {
-      --color: #2c3e50;
-      --border-color: #2c3e50;
-      --border-width: 2px;
-      margin-top: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      
-      &:hover {
-        --background: #2c3e50;
-        --color: #ffffff;
-      }
-    }
-  }
+  padding-bottom: 20px;
 }
+
+/* Footer estático */
+// .static-footer {
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   z-index: 10;
+//   background: white;
+//   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  
+//   ion-toolbar {
+//     --background: transparent;
+//     --border-width: 0;
+//     padding: 5px 0;
+//   }
+  
+//   .footer-buttons {
+//     display: flex;
+//     justify-content: space-around;
+    
+//     ion-button {
+//       --padding-start: 0;
+//       --padding-end: 0;
+//       width: 50px;
+//       height: 50px;
+      
+//       ion-icon {
+//         font-size: 24px;
+//         color: #2c3e50;
+//       }
+//     }
+//   }
+// }
+
+
+
+

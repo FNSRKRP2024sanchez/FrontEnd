@@ -10,26 +10,25 @@ import { addIcons } from 'ionicons';
 import { heart, home, star, options, person, people, addCircle, help,  } from 'ionicons/icons';
 import { routes } from 'src/app/app.routes';
 import { Router } from '@angular/router';
-
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
 @Component({
   selector: 'app-productos-proveedor',
   templateUrl: './productos-proveedor.page.html',
   styleUrls: ['./productos-proveedor.page.scss'],
   standalone: true,
-  imports: [IonButtons, IonFooter, IonSearchbar, 
+  imports: [
+    // IonButtons, IonFooter, 
+    IonSearchbar,
     // IonList, IonItem, IonLabel, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent,
     IonContent,
     IonHeader,
-    IonTitle,
+    // IonTitle,
     IonToolbar,
     CommonModule,
-    FormsModule, 
-    IonIcon,
+    FormsModule,
     ProductCardComponent,
-    IonButton,
-    
-    
-  ]
+    FooterNavComponent,
+]
 })
 export class ProductosProveedorPage implements OnInit {
   proveedorId: string = '';  
@@ -60,14 +59,6 @@ export class ProductosProveedorPage implements OnInit {
   navegarALikes() {
     this.router.navigate(['/likes']);
   }
-
-
-
-
-
-
-
-
 
   ngOnInit() {
     this.proveedorId = this.route.snapshot.paramMap.get('proveedorId') || '';

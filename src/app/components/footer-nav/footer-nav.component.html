@@ -1,0 +1,21 @@
+<ion-toolbar class="footer-nav">
+  <ion-buttons class="footer-buttons">
+    <ion-button shape="round" size="medium" fill="clear" (click)="navigateTo('/home')">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" size="medium" fill="clear" (click)="navigateTo('/favoritos')">
+      <ion-icon slot="icon-only" name="star"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" size="medium" fill="clear" (click)="openOptions($event)">
+      <ion-icon slot="icon-only" name="options"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" size="medium" fill="clear" (click)="navigateTo('/perfil')">
+      <ion-icon slot="icon-only" name="person"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" size="medium" fill="clear" (click)="navigateTo('/comunidad')">
+      <ion-icon slot="icon-only" name="people"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+

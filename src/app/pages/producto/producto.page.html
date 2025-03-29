@@ -1,21 +1,87 @@
-<!-- <ion-content>
-  <ion-card *ngIf="producto">
-    <ion-card-header>
-      <ion-card-title>{{ producto.nombre }}</ion-card-title>
-      <ion-card-subtitle>{{ producto.categoria }}</ion-card-subtitle>
+
+
+<!-- <ion-content class="ion-padding">
+  
+  <div *ngIf="isLoading" class="loading-spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+
+  <div *ngIf="errorMessage" class="error-message">
+    <ion-icon name="warning"></ion-icon>
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  
+  <ion-card *ngIf="producto && !isLoading && !errorMessage" class="producto-card">
+    <ion-img 
+      [src]="imagenUrl" 
+      alt="Imagen del producto" 
+      class="producto-img"
+      (ionError)="imagenUrl = 'assets/images/placeholder.png'">
+    </ion-img>
+
+    <ion-card-header class="header-section">
+      <div class="title-fav">
+        <ion-card-title class="producto-nombre">
+          {{ producto.nombre }}
+        </ion-card-title>
+        
+        <ion-icon 
+          [name]="producto.favorito ? 'star' : 'star-outline'" 
+          class="fav-icon"
+          (click)="toggleFavorito()">
+        </ion-icon>
+      </div>
+      
+      <div class="detalle-producto">
+        <div class="detalle-item">
+          <span class="detalle-label">Fecha:</span>
+          <span class="detalle-valor">
+            {{ producto.fecha | date:'dd/MM/yyyy' }}
+          </span>
+        </div>
+        
+        <div class="detalle-item">
+          <span class="detalle-label">Precio:</span>
+          <span class="detalle-valor precio">
+            {{ producto.precio | currency:'MXN':'symbol':'1.2-2' }}
+          </span>
+        </div>
+
+        <div class="detalle-item">
+          <span class="detalle-label">Stock:</span>
+          <span class="detalle-valor stock">
+            {{ producto.stock }} unidades
+          </span>
+        </div>
+
+        <div class="detalle-item">
+          <span class="detalle-label">Teléfono:</span>
+          <span class="detalle-valor telefono">
+            {{ producto.telefono || 'No disponible' }}
+          </span>
+        </div>
+      </div>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-img [src]="imagenUrl" alt="Imagen del producto"></ion-img>
+      <div class="descripcion-section">
+        <h3>Descripción</h3>
+        <p class="producto-descripcion">
+          {{ producto.descripcion || 'Este producto no tiene descripción' }}
+        </p>
+      </div>
 
-      <p>{{ producto.descripcion }}</p>
-      <p><strong>Precio:</strong> {{ producto.precio | currency }}</p>
+      <ion-button expand="block" shape="round" fill="outline" 
+      class="main-action-btn" 
+      
+        >
+        <ion-icon slot="start" name="cart"></ion-icon>
+        Contactar
+      </ion-button>
     </ion-card-content>
   </ion-card>
-
-  <ion-button (click)="agregarAFavoritos(producto)">
-    {{ producto.favorito ? 'Quitar de favoritos' : 'Agregar a favoritos' }}
-  </ion-button>
 </ion-content> -->
 
 
@@ -30,28 +96,7 @@
 
 
 
-<!-- <ion-content class="ion-padding">
-  <ion-card *ngIf="producto" class="producto-card">
-    <ion-img [src]="imagenUrl" alt="Imagen del producto" class="producto-img"></ion-img>
 
-    <ion-card-header>
-      <ion-card-title class="producto-nombre">{{ producto.nombre }}</ion-card-title>
-      <ion-card-subtitle class="producto-categoria">{{ producto.categoria }}</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-      <p class="producto-descripcion">{{ producto.descripcion }}</p>
-      <p class="producto-precio">
-        <strong>Precio:</strong> {{ producto.precio | currency:'MXN' }}
-      </p>
-
-      <ion-button expand="block" shape="round" fill="solid" color="secondary" (click)="agregarAFavoritos(producto)">
-        <ion-icon slot="start" name="{{ producto.favorito ? 'heart' : 'heart-outline' }}"></ion-icon>
-        {{ producto.favorito ? 'Quitar de favoritos' : 'Agregar a favoritos' }}
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
-</ion-content>   -->
 
 
 
@@ -60,58 +105,33 @@
 
 
 <ion-content class="ion-padding">
-  <ion-card *ngIf="producto" class="producto-card">
-    <ion-img [src]="imagenUrl" alt="Imagen del producto" class="producto-img"></ion-img>
+  <ion-card *ngIf="producto && !isLoading && !errorMessage" class="product-card">
+    <ion-img 
+      [src]="imagenUrl" 
+      [alt]="producto.nombre || 'Producto'"
+      (ionError)="imagenUrl = 'assets/images/placeholder.png'">
+    </ion-img>
 
-    <ion-card-header class="header-section">
-      <div class="title-fav">
-        <ion-card-title class="producto-nombre">{{ producto.nombre }}</ion-card-title>
-        <img [src]="producto.favorito ? 'assets/images/logo de BIOCONNECT.svg ' : 'assets/images/Logo estrella.png'" 
-          alt="Favorito" class="fav-icon" (click)="agregarAFavoritos(producto)">
-          
-          
+    <ion-card-header>
+      <div class="title-favorite">
+        <ion-card-title>{{ producto.nombre || 'Nombre no disponible' }}</ion-card-title>
+        <ion-icon 
+          [name]="producto.favorito ? 'star' : 'star-outline'" 
+          [color]="producto.favorito ? 'warning' : 'medium'"
+          (click)="toggleFavorito()">
+        </ion-icon>
       </div>
-      
-      <div class="detalle-producto">
-        <div class="detalle-item">
-          <span class="detalle-label">Fecha:</span>
-          <span class="detalle-valor">{{ producto.fecha | date:'dd/MM/yyyy' }}</span>
-        </div>
-        
-        <div class="detalle-item">
-          <span class="detalle-label">Precio:</span>
-          <span class="detalle-valor precio">{{ producto.precio | currency:'MXN' }}</span>
-        </div>
 
-        <div class="detalle-item">
-          <span class="detalle-label">Stock:</span>
-          <span class="detalle-valor stock">{{ producto.stock }}</span>
-        </div>
-
-        <div class="detalle-item">
-          <span class="detalle-label">Teléfono:</span>
-          <span class="detalle-valor telefono">{{ producto.telefono }}</span>
+      <div class="product-details">
+        <div class="detail-row">
+          <span class="detail-label">Precio:</span>
+          <span class="detail-value price">
+            {{ (producto.precio | currency:'MXN':'symbol':'1.2-2') || 'N/A' }}
+          </span>
         </div>
       </div>
     </ion-card-header>
-
-    <ion-card-content>
-      <div class="descripcion-section">
-        <h3>Descripción</h3>
-        <p class="producto-descripcion">{{ producto.descripcion }}</p>
-      </div>
-
-      <ion-button expand="block" shape="round" fill="outline" class="main-action-btn">
-        <ion-icon slot="start" name="cart"></ion-icon>
-        Contacto
-      </ion-button>
-    </ion-card-content>
   </ion-card>
 </ion-content>
 
-
-
-
-
-
-
+<app-footer-nav></app-footer-nav>

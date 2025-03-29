@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Productos de {{ categoria }}</ion-title>
   </ion-toolbar>
@@ -25,6 +25,150 @@
   <div *ngIf="productos.length === 0 && categoria">
     <p>No se encontraron productos para esta categoría.</p>
   </div>
+</ion-content> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <div class="header-container">
+        <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="header-logo">
+        <ion-searchbar 
+          class="custom-searchbar" 
+          placeholder="Buscar"
+          (ionInput)="buscar($event)"
+          (keyup.enter)="buscar($event)">
+        </ion-searchbar>
+      </div>
+    </ion-toolbar>
+
+    <div class="titulo-seccion">
+      <h2>{{ categoria | uppercase }}</h2>
+    </div>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="productos-wrapper">
+      <div *ngIf="productos.length === 0" class="loading-container">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Cargando productos...</p>
+      </div>
+
+      <div *ngIf="productos.length > 0" class="productos-scroll">
+        <ion-card *ngFor="let producto of productos" class="producto-card">
+          <div class="card-content">
+            <div class="imagen-container">
+              <img [src]="producto.Imagen || 'assets/images/placeholder-producto.png'" alt="{{ producto.Nombre }}" class="producto-imagen">
+            </div>
+            
+            <div class="info-container">
+              <h2 class="producto-nombre">{{ producto.Nombre }}</h2>
+              <p class="producto-descripcion">{{ producto.Descripcion }}</p>
+              
+              <div class="detalles-container">
+                <p class="producto-precio">${{ producto.price }}</p>
+                <p class="producto-stock">Stock: {{ producto.Stock }}</p>
+              </div>
+              
+              <ion-button class="ver-producto-btn" (click)="verProducto(producto.id)">
+                Ver Producto
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+
+      <div *ngIf="productos.length === 0 && categoria" class="no-productos">
+        <p>No se encontraron productos para esta categoría.</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-content> -->
+
+
+
+
+
+
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <div class="header-container">
+        <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="header-logo">
+        <ion-searchbar 
+          class="custom-searchbar" 
+          placeholder="Buscar en {{ categoria }}"
+          (ionInput)="buscar($event)"
+          debounce="300"> 
+        </ion-searchbar>
+      </div>
+    </ion-toolbar>
+
+    <div class="titulo-seccion">
+      <h2>{{ categoria | uppercase }}</h2>
+    </div>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="productos-wrapper">
+      <div *ngIf="productosOriginales.length === 0" class="loading-container">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Cargando productos...</p>
+      </div>
+
+      <div *ngIf="productosOriginales.length > 0" class="productos-scroll">
+
+        <div *ngIf="productos.length === 0 && productosOriginales.length > 0" class="no-results">
+          <p>No se encontraron productos que coincidan con tu búsqueda.</p>
+        </div>
+
+
+        <ion-card *ngFor="let producto of productos" class="producto-card">
+          <div class="card-content">
+            <div class="imagen-container">
+              <img [src]="producto.Imagen || 'assets/images/placeholder-producto.png'" alt="{{ producto.Nombre }}" class="producto-imagen">
+            </div>
+            
+            <div class="info-container">
+              <h2 class="producto-nombre">{{ producto.Nombre }}</h2>
+              <p class="producto-descripcion">{{ producto.Descripcion }}</p>
+              
+              <div class="detalles-container">
+                <p class="producto-precio">${{ producto.price }}</p>
+                <p class="producto-stock">Stock: {{ producto.Stock }}</p>
+              </div>
+              
+              <!-- <ion-button class="ver-producto-btn" (click)="verProducto(producto.id)">
+                Ver Producto
+              </ion-button> -->
+              <ion-button class="ver-producto-btn" (click)="verProducto(producto.ID || producto.id || producto._id)">
+                Ver Producto
+              </ion-button>
+            </div>
+          </div>    
+        </ion-card>
+      </div>
+
+      <div *ngIf="productosOriginales.length === 0 && categoria" class="no-productos">
+        <p>No se encontraron productos para esta categoría.</p>
+      </div>
+    </div>
+  </ion-content>
 </ion-content>
 
 
+<app-footer-nav></app-footer-nav>

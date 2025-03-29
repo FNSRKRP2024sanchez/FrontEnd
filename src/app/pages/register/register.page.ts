@@ -5,6 +5,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonButton, IonLab
 import { ProveedorService } from 'src/app/services/proveedor.service';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
 
 @Component({
   selector: 'app-register',
@@ -23,6 +24,7 @@ import { ApiService } from 'src/app/api.service';
     IonButton,
     IonLabel,
     IonInput,
+    FooterNavComponent,
 
   ]
 })

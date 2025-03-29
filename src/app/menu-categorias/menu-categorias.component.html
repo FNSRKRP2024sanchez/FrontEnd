@@ -1,4 +1,4 @@
-<ion-list>
+<!-- <ion-list>
   <ion-item button (click)="option1()">
     Frutas-verduras
   </ion-item>
@@ -11,7 +11,38 @@
   <ion-item button (click)="option4()">
     Legumbres-Frutos secos
   </ion-item>
-</ion-list>
+</ion-list> -->
 
+<ion-content class="categorias-content">
+  <div class="header-categorias">
+    <h2> Categorías</h2>
+    <!-- <p>Selecciona una categoría para explorar productos</p> -->
+  </div>
 
+  <ion-list lines="none" class="categorias-list">
+    <ion-item button (click)="option1()" class="categoria-item">
+      <ion-icon name="nutrition" slot="start" class="icon-frutas"></ion-icon>
+      <ion-label>Frutas y Verduras</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item button (click)="option2()" class="categoria-item">
+      <ion-icon name="ice-cream" slot="start" class="icon-lacteos"></ion-icon>
+      <ion-label>Lácteos</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item button (click)="option3()" class="categoria-item">
+      <ion-icon name="leaf" slot="start" class="icon-granos"></ion-icon>
+      <ion-label>Granos y Cereales</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item button (click)="option4()" class="categoria-item">
+      <ion-icon name="fitness" slot="start" class="icon-legumbres"></ion-icon>
+      <ion-label>Legumbres y Frutos Secos</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
 

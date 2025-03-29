@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; 
 import { IonContent, IonButton } from '@ionic/angular/standalone';
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   standalone: true, 
-  imports: [IonContent, IonButton] 
+  imports: [IonContent, IonButton,
+    FooterNavComponent
+  ] 
 })
 export class DashboardComponent {
 

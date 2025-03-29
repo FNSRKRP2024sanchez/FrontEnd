@@ -1,0 +1,31 @@
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  --background: white; /* Fondo blanco */
+  --border-color: #e0e0e0; /* Borde sutil */
+  border-top: 1px solid var(--border-color);
+  
+  .footer-buttons {
+    display: flex;
+    justify-content: space-around;
+    
+    ion-button {
+      --padding-start: 0;
+      --padding-end: 0;
+      --color: black; /* Color de iconos negro */
+      --color-activated: var(--ion-color-primary); /* Color al activar */
+      --color-focused: var(--ion-color-primary); /* Color al enfocar */
+      
+      ion-icon {
+        font-size: 1.5rem;
+        color: black; /* Asegura color negro */
+      }
+    }
+  }
+}
+
+

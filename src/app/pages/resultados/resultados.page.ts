@@ -5,6 +5,8 @@ import { IonContent, IonHeader, IonButton, IonTitle, IonToolbar, IonList, IonIte
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
+import { FooterNavComponent } from '../../components/footer-nav/footer-nav.component';
+
 
 @Component({
   selector: 'app-resultados',
@@ -13,7 +15,9 @@ import { ProductCardComponent } from '../../components/product-card/product-card
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList,
     //  IonItem, IonLabel, IonButton, 
-     ProductCardComponent]
+     ProductCardComponent,
+     FooterNavComponent,
+    ]
 })
 export class ResultadosPage implements OnInit {
 

@@ -1,91 +1,35 @@
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Productos Favoritos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="!isLoading; else loading">
-  <ion-list>
-    <ion-item>
-      <app-product-card [favoritos]="true"></app-product-card>
-
-    </ion-item>
-  </ion-list>
+<ion-content class="ion-padding" *ngIf="!isLoading; else loading">
+  <div class="favoritos-container">
+    <ng-container *ngIf="productosFavoritos && productosFavoritos.length > 0; else noFavoritos">
+      <div class="productos-grid">
+        <app-product-card [favoritos]="true"></app-product-card>
+      </div>
+    </ng-container>
+    
+    <ng-template #noFavoritos>
+      <div class="empty-state">
+        <ion-icon name="star-outline" class="empty-icon"></ion-icon>
+        <h3>No tienes favoritos aún</h3>
+        <p>Guarda tus productos favoritos haciendo clic en la estrella</p>
+        <ion-button fill="outline" routerLink="/home">Explorar productos</ion-button>
+      </div>
+    </ng-template>
+  </div>
 </ion-content>
 
 <ng-template #loading>
-  <ion-spinner name="dots"></ion-spinner>
-  <p>Cargando productos favoritos...</p>
+  <div class="loading-spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando productos favoritos...</p>
+  </div>
 </ng-template>
 
-
-
-
-
-
-
-<!-- 
-
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">❤️ Productos Favoritos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content *ngIf="!isLoading; else loading" class="ion-padding">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let producto of productosFavoritos">
-        
-        <app-product-card [producto]="producto" [favoritos]="true"></app-product-card>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
-
-<ng-template #loading>
-  <ion-content class="ion-padding ion-text-center">
-    <ion-spinner name="dots" color="primary"></ion-spinner>
-    <p class="ion-margin-top">Cargando productos favoritos...</p>
-  </ion-content>
-</ng-template> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">❤️ Productos Favoritos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content *ngIf="!isLoading; else loading" class="ion-padding">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let producto of productosFavoritos">
-        <app-product-card [producto]="producto" [favoritos]="true"></app-product-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
-
-<ng-template #loading>
-  <ion-content class="ion-padding ion-text-center">
-    <ion-spinner name="dots" color="primary"></ion-spinner>
-    <p class="ion-margin-top">Cargando productos favoritos...</p>
-  </ion-content>
-</ng-template> -->
+<app-footer-nav></app-footer-nav>
 

@@ -1,0 +1,75 @@
+
+.categorias-content {
+    --background: #f8f9fa;
+    padding: 16px;
+  }
+  
+  .header-categorias {
+    text-align: center;
+    margin-bottom: 24px;
+  
+    h2 {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+  
+    p {
+      color: #7f8c8d;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .categorias-list {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .categoria-item {
+    --background: #ffffff;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --inner-padding-end: 0;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  
+    &:active {
+      transform: scale(0.98);
+    }
+  
+    ion-label {
+      font-weight: 500;
+      color: #34495e;
+    }
+  
+    ion-icon[slot="start"] {
+      font-size: 1.4rem;
+      margin-right: 12px;
+    }
+  
+    ion-icon[slot="end"] {
+      color: #bdc3c7;
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Colores personalizados para los iconos */
+  .icon-frutas {
+    color: #27ae60;
+  }
+  
+  .icon-lacteos {
+    color: #3498db;
+  }
+  
+  .icon-granos {
+    color: #f39c12;
+  }
+  
+  .icon-legumbres {
+    color: #8e44ad;
+  }

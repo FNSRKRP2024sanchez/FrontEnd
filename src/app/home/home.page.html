@@ -41,147 +41,57 @@
 </ion-footer>  -->
 
 
-  
-<!-- <ion-header [translucent]="true" >
-  <ion-toolbar>
-    <div class="header-container">
-      <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="header-logo">
-      <ion-searchbar class="custom-searchbar" placeholder="Buscar" (ionInput)="buscar($event)" (keyup.enter)="buscar($event)">
-      </ion-searchbar>
+
+
+
+
+<ion-content [fullscreen]="true" class="main-container">
+  <div class="static-header">
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <div class="header-container">
+          <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="header-logo">
+          <ion-searchbar class="custom-searchbar" placeholder="Buscar" (ionInput)="buscar($event)" (keyup.enter)="buscar($event)">
+          </ion-searchbar>
+        </div>
+      </ion-toolbar>
+      <!-- <ion-toolbar class="search-toolbar">
+        <div class="header-container">
+          <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="header-logo">
+          <ion-searchbar class="custom-searchbar" placeholder="Buscar" (ionInput)="buscar($event)" (keyup.enter)="buscar($event)">
+          </ion-searchbar>
+        </div>
+      </ion-toolbar> -->
+      
+
+      <div class="main-image-container">
+        <img src="assets/images/registro.png" alt="Banner" class="main-image">
+      </div>
+
+      <div class="providers-header">
+        <div class="title-section">
+          <ion-button fill="clear" class="help-btn" (click)="mostrarIconos()">
+            <ion-icon name="help-circle" slot="icon-only" class="help-icon"></ion-icon>
+          </ion-button>
+          <h2 class="section-title">PROVEEDORES</h2>
+        </div>
+
+        <div class="title-section">
+          <ion-button fill="clear" class="custom-btn" (click)="gotoDashboard()">
+            <ion-icon name="add-circle" slot="icon-only" class="plus-icon"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-header>
+  </div>
+
+
+  <div class="scrollable-content">
+    <div class="providers-list">
+      <app-proveedor-card></app-proveedor-card>
     </div>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div class="main-image-container">
-    <img src="assets/images/registro.png" alt="Banner" class="main-image">
-  </div>
-
-  <div class="providers-header">
-    <div class="title-section">
-      <ion-button fill="clear" class="heart-btn">
-        <ion-icon name="heart" color="danger"></ion-icon>
-      </ion-button>
-      <h2 class="section-title">PROVEEDORES</h2>
-    </div>
-
-
-<ion-button class="custom-btn" (click)="gotoDashboard()">
-  <ion-icon name="add-circle"></ion-icon>
-  <ion-label></ion-label>
-</ion-button>
-  </div>
-  
-
-<h1></h1>
-
-
-
-  <div class="providers-list">
-    <app-proveedor-card></app-proveedor-card>
-  </div>
-
-</ion-content>
-
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons style="display: flex; justify-content: space-between; width: 100%; padding: 10px;">
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;">
-        <ion-icon slot="start" name="home"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;" (click)="goToFavoritos()">
-        <ion-icon slot="start" name="star"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;" (click)="presentPopover($event)">
-        <ion-icon slot="start" name="options"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;" (click)="goToPerfil()">
-        <ion-icon slot="start" name="person"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;" >
-        <ion-icon slot="start" name="people"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
-
- -->
-
-
-
-
-
-
-
-<ion-content> 
-  <ion-header [translucent]="true">
-  <ion-toolbar>
-    <div class="header-container">
-      <img src="assets/images/logo de BIOCONNECT.svg" alt="Logo" class="header-logo">
-      <ion-searchbar class="custom-searchbar" placeholder="Buscar" (ionInput)="buscar($event)" (keyup.enter)="buscar($event)">
-      </ion-searchbar>
-    </div>
-  </ion-toolbar>
-
-  <div class="main-image-container">
-    <img src="assets/images/registro.png" alt="Banner" class="main-image">
-  </div>
-
-  <div class="providers-header">
-    <div class="title-section">
-      <ion-button fill="clear" class="help-btn" (click)="mostrarIconos()">
-        <img src="assets/images/Logo Interrogacion.png" alt="Ayuda" class="help-icon">
-      </ion-button>
-      <h2 class="section-title">PROVEEDORES</h2>
-    </div>>
-
-<div class="title-section">
-  <ion-button fill="clear" class="custom-btn" (click)="gotoDashboard()">
-    <img src="assets/images/Logo DE +.png" alt="Agregar" class="plus-icon">
-  </ion-button>
-</div>
-<!-- <ion-button fill="clear" class="custom-btn" (click)="gotoDashboard()">
-  <img src="assets/images/Logo DE +.png" alt="Agregar" class="plus-icon">
-</ion-button> -->
-
-
-
-
   </div>
 
 
-
-</ion-header>
-<ion-content [fullscreen]="true" scroll-y="true">
-  <div class="providers-list">
-    <app-proveedor-card></app-proveedor-card>
-  </div>    
-</ion-content>
-
-
-
-
-
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons style="display: flex; justify-content: space-between; width: 100%; padding: 10px;">
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;">
-        <ion-icon slot="start" name="home"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;" (click)="goToFavoritos()">
-        <ion-icon slot="start" name="star"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;" (click)="presentPopover($event)">
-        <ion-icon slot="start" name="options"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;" (click)="goToPerfil()">
-        <ion-icon slot="start" name="person"></ion-icon>
-      </ion-button>
-      <ion-button shape="round" size="medium" fill="clear" style="flex: 1;">
-        <ion-icon slot="start" name="people"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+  <app-footer-nav></app-footer-nav>
+</ion-content>  
